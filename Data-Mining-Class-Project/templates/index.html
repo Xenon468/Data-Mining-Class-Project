@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>Home</title>
+    </head>
+    <body class="bg-secondary">
+        <nav class="navbar navbar-light bg-dark p-2 pt-3 justify-content-center">
+            <div class="navbar-brand d-flex">
+                <a class="fs-4 fw-bold text-light" href="/" data-toggle="tooltip" title="Home" style="text-decoration: none;">
+                    Predict Visitor to Jamaica
+                </a>
+            </div>
+        </nav>
+        <div class="d-flex justify-content-center pt-5 row">
+            <div class="card bg-dark col-4">
+                <div class="card-body">
+                    <form action="/predictedVisitor" method="post">
+                        <div class="form-group">
+                            <label class="text-light mb-2" for="portEntry">Choose Port of Entry:</label>
+                            <select class="form-select" name="portEntry" id="portEntry" required>
+                                <option selected disabled>Choose...</option>
+                                {% for key, value in dict1.items() %}
+                                    <option value="{{value}}">{{key}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="text-light mb-2" for="visitType">Choose a Type of Visit:</label>
+                            <select class="form-select" name="visitType" id="visitType" required>
+                                <option selected disabled>Choose...</option>
+                                {% for key, value in dict2.items() %}
+                                    <option value="{{value}}">{{key}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="text-light mb-2" for="origin">Choose Origin:</label>
+                            <select class="form-select" name="origin" id="origin" required>
+                                <option selected disabled>Choose...</option>
+                                {% for key, value in dict3.items() %}
+                                    <option value="{{value}}">{{key}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="text-light mb-2" for="month">Choose Month:</label>
+                            <select class="form-select" name="month" id="month" required>
+                                <option selected disabled>Choose...</option>
+                                {% for key, value in dict4.items() %}
+                                    <option value="{{value}}">{{key}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group mt-2 mb-2">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>
