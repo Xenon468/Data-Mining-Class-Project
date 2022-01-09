@@ -1,5 +1,5 @@
 # Data-Mining-Class-Project
-Project of Data Mining Class about predicting visitors in Jamaica using data from 2017  
+Project for Data Mining Class about predicting visitors in Jamaica using data from 2017  
 Using K Nearest Neighbor Algorithm and Flask Web Development
 
 Dataset from:  
